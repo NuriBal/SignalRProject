@@ -1,1 +1,8 @@
-<Solution />
+<Solution>
+  <Project Path="SignalR.API/SignalR.API.csproj" />
+  <Project Path="SignalR.Bussiness/SignalR.Bussiness.csproj" />
+  <Project Path="SignalR.DataAccess/SignalR.DataAccess.csproj" />
+  <Project Path="SignalR.Dto/SignalR.Dto.csproj" />
+  <Project Path="SignalR.Entity/SignalR.Entity.csproj" />
+  <Project Path="SignalR.UI/SignalR.UI.csproj" />
+</Solution>
