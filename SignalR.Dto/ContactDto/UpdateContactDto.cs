@@ -1,7 +1,8 @@
 ﻿namespace SignalR.Dto.ContactDto;
 
-public class CreateContactDto
+public class UpdateContactDto
 {
+    public string Id { get; set; }
     public string Location { get; set; }
     public string Phone { get; set; }
     public string Mail { get; set; }
