@@ -40,7 +40,7 @@ namespace SignalR.API.Controllers
         {
             var entity = _mapper.Map<Testimonial>(dto);
             _service.TAdd(entity);
-            return Ok("Sosyal medya bilgisi başarı ile eklendi");
+            return Ok("Yorum bilgisi başarı ile eklendi");
         }
 
         [HttpPut]
@@ -48,7 +48,7 @@ namespace SignalR.API.Controllers
         {
             var entity = _mapper.Map<Testimonial>(dto);
             _service.TUpdate(entity);
-            return Ok("Sosyal medya bilgisi başarı ile güncellendi");
+            return Ok("Yorum bilgisi başarı ile güncellendi");
         }
 
         [HttpDelete]
@@ -58,7 +58,7 @@ namespace SignalR.API.Controllers
             entity.UpdatedDate = DateTime.Now;
             entity.IsActive = false;
             _service.TUpdate(entity);
-            return Ok("Sosyal medya bilgisi silindi");
+            return Ok("Yorum bilgisi silindi");
         }
 
         //[HttpDelete]
@@ -66,7 +66,7 @@ namespace SignalR.API.Controllers
         //{
         //    var value = _service.TGetById(id);
         //    _service.TDelete(value);
-        //    return Ok("Sosyal medya bilgisi tamamen silindi");
+        //    return Ok("Yorum bilgisi tamamen silindi");
         //}
     }
 }
