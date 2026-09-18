@@ -9,5 +9,5 @@ public class GetDiscountDto
     public string Amount { get; set; }
     public DateTime CreatedDate { get; set; }
     public DateTime? UpdateDate { get; set; }
-    public bool Status { get; set; }
+    public bool IsActive { get; set; }
 }

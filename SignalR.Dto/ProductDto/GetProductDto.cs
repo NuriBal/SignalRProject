@@ -9,5 +9,6 @@ public class GetProductDto
     public string ImageUrl { get; set; }
     public DateTime CreatedDate { get; set; }
     public DateTime? UpdateDate { get; set; }
+    public bool IsActive { get; set; }
     public bool Status { get; set; }
 }

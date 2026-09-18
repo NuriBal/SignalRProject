@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using SignalR.API.Mapping;
+﻿using SignalR.API.Mapping;
 
 namespace SignalR.API.Configurations;
 

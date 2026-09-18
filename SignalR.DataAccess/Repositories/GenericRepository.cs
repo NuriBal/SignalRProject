@@ -39,7 +39,7 @@ public class GenericRepository<T> : IGenericDal<T> where T : class
     {
         if (entity is BaseEntity baseEntity)
         {
-            baseEntity.UpdateDate = DateTime.Now;
+            baseEntity.UpdatedDate = DateTime.Now;
         }
         _context.Update(entity);
         _context.SaveChanges();

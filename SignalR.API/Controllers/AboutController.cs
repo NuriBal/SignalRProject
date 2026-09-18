@@ -6,16 +6,16 @@ using SignalR.Entity.Entities;
 
 namespace SignalR.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/abouts")]
 [ApiController]
 public class AboutController : ControllerBase
 {
     private readonly IAboutService _service;
     private readonly IMapper _mapper;
 
-    public AboutController(IAboutService aboutService, IMapper mapper)
+    public AboutController(IAboutService service, IMapper mapper)
     {
-        _service = aboutService;
+        _service = service;
         _mapper = mapper;
     }
 
@@ -27,7 +27,7 @@ public class AboutController : ControllerBase
         return Ok(response);
     }
 
-    [HttpGet("GetAbout")]
+    [HttpGet("getById")]
     public IActionResult GetAbout(string id)
     {
         var value = _service.TGetById(id);
@@ -52,10 +52,20 @@ public class AboutController : ControllerBase
     }
 
     [HttpDelete]
-    public IActionResult HardDelete(string id)
+    public IActionResult Delete(string id)
     {
-        var value = _service.TGetById(id);
-        _service.TDelete(value);
-        return Ok("Hakkımda bilgisi tamamen silindi");
+        var entity = _service.TGetById(id);
+        entity.UpdatedDate = DateTime.Now;
+        entity.IsActive = false;
+        _service.TUpdate(entity);
+        return Ok("Hakkımda bilgisi silindi");
     }
+
+    //[HttpDelete]
+    //public IActionResult HardDelete(string id)
+    //{
+    //    var value = _service.TGetById(id);
+    //    _service.TDelete(value);
+    //    return Ok("Hakkımda bilgisi tamamen silindi");
+    //}
 }
