@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class BookingMapping : Profile
 {
-    protected BookingMapping()
+    public BookingMapping()
     {
         CreateMap<Booking, ResultBookingDto>();
         CreateMap<Booking, GetBookingDto>();

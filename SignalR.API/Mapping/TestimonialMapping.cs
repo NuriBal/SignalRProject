@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class TestimonialMapping : Profile
 {
-    protected TestimonialMapping()
+    public TestimonialMapping()
     {
         CreateMap<Testimonial, ResultTestimonialDto>();
         CreateMap<Testimonial, GetTestimonialDto>();

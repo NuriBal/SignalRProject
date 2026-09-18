@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class AboutMapping : Profile
 {
-    protected AboutMapping()
+    public AboutMapping()
     {
         CreateMap<About, ResultAboutDto>();
         CreateMap<About, GetAboutDto>();

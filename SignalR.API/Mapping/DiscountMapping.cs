@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class DiscountMapping : Profile
 {
-    protected DiscountMapping()
+    public DiscountMapping()
     {
         CreateMap<Discount, ResultDiscountDto>();
         CreateMap<Discount, GetDiscountDto>();

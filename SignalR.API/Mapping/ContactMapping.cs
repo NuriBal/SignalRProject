@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class ContactMapping : Profile
 {
-    protected ContactMapping()
+    public ContactMapping()
     {
         CreateMap<Contact, ResultContactDto>();
         CreateMap<Contact, GetContactDto>();

@@ -1,4 +1,6 @@
-﻿namespace SignalR.Entity.Entities;
+﻿using SignalR.Entity.Abstract;
+
+namespace SignalR.Entity.Entities;
 
 public class Product : BaseEntity
 {

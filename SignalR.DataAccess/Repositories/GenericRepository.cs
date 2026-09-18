@@ -1,5 +1,6 @@
 ﻿using SignalR.DataAccess.Abstract;
 using SignalR.DataAccess.Concrete;
+using SignalR.Entity.Abstract;
 
 namespace SignalR.DataAccess.Repositories;
 
@@ -36,6 +37,10 @@ public class GenericRepository<T> : IGenericDal<T> where T : class
 
     public void Update(T entity)
     {
+        if (entity is BaseEntity baseEntity)
+        {
+            baseEntity.UpdateDate = DateTime.Now;
+        }
         _context.Update(entity);
         _context.SaveChanges();
     }

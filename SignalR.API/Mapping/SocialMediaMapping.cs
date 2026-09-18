@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class SocialMediaMapping : Profile
 {
-    protected SocialMediaMapping()
+    public SocialMediaMapping()
     {
         CreateMap<SocialMedia, ResultSocialMediaDto>();
         CreateMap<SocialMedia, GetSocialMediaDto>();

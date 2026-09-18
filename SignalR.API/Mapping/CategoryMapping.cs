@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class CategoryMapping : Profile
 {
-    protected CategoryMapping()
+    public CategoryMapping()
     {
         CreateMap<Category, ResultCategoryDto>();
         CreateMap<Category, GetCategoryDto>();

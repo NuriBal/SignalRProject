@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class ProductMapping : Profile
 {
-    protected ProductMapping()
+    public ProductMapping()
     {
         CreateMap<Product, ResultProductDto>();
         CreateMap<Product, GetProductDto>();

@@ -6,7 +6,7 @@ namespace SignalR.API.Mapping;
 
 public class FeatureMapping : Profile
 {
-    protected FeatureMapping()
+    public FeatureMapping()
     {
         CreateMap<Feature, ResultFeatureDto>();
         CreateMap<Feature, GetFeatureDto>();
