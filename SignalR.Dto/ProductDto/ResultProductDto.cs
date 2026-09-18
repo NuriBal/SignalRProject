@@ -1,4 +1,6 @@
-﻿namespace SignalR.Dto.ProductDto;
+﻿using SignalR.Dto.CategoryDto;
+
+namespace SignalR.Dto.ProductDto;
 
 public class ResultProductDto
 {
@@ -11,4 +13,6 @@ public class ResultProductDto
     public DateTime? UpdateDate { get; set; }
     public bool IsActive { get; set; }
     public bool Status { get; set; }
+    public string FkCategoryId { get; set; }
+    public string CategoryName { get; set; }
 }

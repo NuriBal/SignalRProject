@@ -4,4 +4,5 @@ namespace SignalR.Bussiness.Abstract;
 
 public interface IProductService : IGenericService<Product>
 {
+    List<Product> TGetProductsWithCategories();
 }

@@ -27,6 +27,14 @@ namespace SignalR.API.Controllers
             return Ok(response);
         }
 
+        [HttpGet("getProductWithCategory")]
+        public IActionResult GetProductsWithCategories()
+        {
+            var values = _service.TGetProductsWithCategories();
+            var response = _mapper.Map<List<ResultProductDto>>(values);
+            return Ok(response);
+        }
+
         [HttpGet("getById")]
         public IActionResult GetProduct(string id)
         {
