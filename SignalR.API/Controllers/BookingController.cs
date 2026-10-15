@@ -22,7 +22,7 @@ public class BookingController : ControllerBase
     [HttpGet]
     public IActionResult List()
     {
-        var values = _service.TGetListAll();
+        var values = _service.TGetListAll().Where(w => w.IsActive);
         var response = _mapper.Map<List<ResultBookingDto>>(values);
         return Ok(response);
     }

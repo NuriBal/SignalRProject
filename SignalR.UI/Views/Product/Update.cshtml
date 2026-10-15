@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Güncelle";
-    Layout = "~/Views/AdminLayout/Index.cshtml";
-}
-@model SignalR.UI.Dtos.ProductDtos.UpdateProductDto
+﻿@model SignalR.UI.Dtos.ProductDtos.UpdateProductDto
 
 <div class="content">
     <div class="container-fluid">
@@ -15,18 +11,19 @@
                             <div class="card-title">Ürün Güncelle</div>
                         </div>
                         <div class="card-body">
-                            <input type="hidden" id="productid" asp-for="Id" value="@Model.Id">
+                            <input type="hidden" id="productid" asp-for="Id">
+                            <input type="hidden" asp-for="Status">
                             <div class="form-group">
                                 <label for="productname">Ürün Adı</label>
-                                <input type="text" class="form-control" id="productname" placeholder="Ürün adını girin" asp-for="Name" value="@Model.Name">
+                                <input type="text" class="form-control" id="productname" placeholder="Ürün adını girin" asp-for="Name">
                             </div>
                             <div class="form-group">
                                 <label for="productprice">Ürün Fiyatı</label>
-                                <input type="text" class="form-control" id="productprice" placeholder="Ürün fiyatını girin" asp-for="Price" value="@Model.Price">
+                                <input type="text" inputmode="decimal" pattern="[0-9]+(,[0-9]{1,2})?" title="Sadece sayı girin, en fazla 2 ondalık (örn: 149,90)" oninput="this.value = this.value.replace('.', ',').replace(/[^0-9,]/g, '')" class="form-control" id="productprice" placeholder="Ürün fiyatını girin" asp-for="Price">
                             </div>
                             <div class="form-group">
                                 <label for="imageurl">Ürün Görseli</label>
-                                <input type="text" class="form-control" id="imageurl" placeholder="Ürün görselini girin" asp-for="ImageUrl" value="@Model.ImageUrl">
+                                <input type="text" class="form-control" id="imageurl" placeholder="Ürün görselini girin" asp-for="ImageUrl">
                             </div>
                             <div class="form-group">
                                 <label for="productcategory">Ürün Kategorisi</label>
@@ -34,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="productdescription">Ürün Açıklaması</label>
-                                <input type="text" class="form-control" id="productdescription" placeholder="Ürün açıklamasını girin" asp-for="Description" value="@Model.Description">
+                                <input type="text" class="form-control" id="productdescription" placeholder="Ürün açıklamasını girin" asp-for="Description">
                             </div>
                         </div>
                         <div class="card-action">

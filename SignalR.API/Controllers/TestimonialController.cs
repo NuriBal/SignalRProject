@@ -22,7 +22,7 @@ public class TestimonialController : ControllerBase
     [HttpGet]
     public IActionResult List()
     {
-        var values = _service.TGetListAll();
+        var values = _service.TGetListAll().Where(w => w.IsActive);
         var response = _mapper.Map<List<ResultTestimonialDto>>(values);
         return Ok(response);
     }

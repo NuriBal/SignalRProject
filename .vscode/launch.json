@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "API",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/SignalR.API/bin/Debug/net10.0/SignalR.API.dll",
+      "cwd": "${workspaceFolder}/SignalR.API",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:44306"
+      }
+    },
+    {
+      "name": "UI",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/SignalR.UI/bin/Debug/net10.0/SignalR.UI.dll",
+      "cwd": "${workspaceFolder}/SignalR.UI",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:7173"
+      },
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "API + UI",
+      "configurations": ["API", "UI"],
+      "preLaunchTask": "build",
+      "stopAll": true
+    }
+  ]
+}

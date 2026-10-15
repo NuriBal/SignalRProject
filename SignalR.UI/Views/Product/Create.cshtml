@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Yeni Kayıt";
-    Layout = "~/Views/AdminLayout/Index.cshtml";
-}
-@model SignalR.UI.Dtos.ProductDtos.CreateProductDto
+﻿@model SignalR.UI.Dtos.ProductDtos.CreateProductDto
 
 <div class="content">
     <div class="container-fluid">
@@ -21,7 +17,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="productprice">Ürün Fiyatı</label>
-                                <input type="number" class="form-control" id="productprice" placeholder="Ürün fiyatını girin" asp-for="Price">
+                                <input type="text" inputmode="decimal" pattern="[0-9]+(,[0-9]{1,2})?" title="Sadece sayı girin, en fazla 2 ondalık (örn: 149,90)" oninput="this.value = this.value.replace('.', ',').replace(/[^0-9,]/g, '')" class="form-control" id="productprice" placeholder="Ürün fiyatını girin" asp-for="Price">
                             </div>
                             <div class="form-group">
                                 <label for="imageurl">Ürün Görseli</label>

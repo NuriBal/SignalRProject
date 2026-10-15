@@ -1,0 +1,48 @@
+﻿@model SignalR.UI.Dtos.FeatureDtos.UpdateFeatureDto
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Öne Çıkan İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Öne Çıkan Güncelle</div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" id="featureid" asp-for="Id">
+                            <div class="form-group">
+                                <label for="featuretitleone">Başlık 1</label>
+                                <input type="text" class="form-control" id="featuretitleone" placeholder="Birinci başlığı girin" asp-for="TitleOne">
+                            </div>
+                            <div class="form-group">
+                                <label for="featuredescriptionone">Açıklama 1</label>
+                                <input type="text" class="form-control" id="featuredescriptionone" placeholder="Birinci açıklamayı girin" asp-for="DescriptionOne">
+                            </div>
+                            <div class="form-group">
+                                <label for="featuretitletwo">Başlık 2</label>
+                                <input type="text" class="form-control" id="featuretitletwo" placeholder="İkinci başlığı girin" asp-for="TitleTwo">
+                            </div>
+                            <div class="form-group">
+                                <label for="featuredescriptiontwo">Açıklama 2</label>
+                                <input type="text" class="form-control" id="featuredescriptiontwo" placeholder="İkinci açıklamayı girin" asp-for="DescriptionTwo">
+                            </div>
+                            <div class="form-group">
+                                <label for="featuretitletree">Başlık 3</label>
+                                <input type="text" class="form-control" id="featuretitletree" placeholder="Üçüncü başlığı girin" asp-for="TitleTree">
+                            </div>
+                            <div class="form-group">
+                                <label for="featuredescriptiontree">Açıklama 3</label>
+                                <input type="text" class="form-control" id="featuredescriptiontree" placeholder="Üçüncü açıklamayı girin" asp-for="DescriptionTree">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

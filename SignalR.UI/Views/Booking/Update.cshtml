@@ -1,0 +1,45 @@
+﻿@model SignalR.UI.Dtos.BookingDtos.UpdateBookingDto
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Rezervasyon İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Rezervasyon Güncelle</div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" id="bookingid" asp-for="Id">
+                            <input type="hidden" asp-for="Status">
+                            <div class="form-group">
+                                <label for="bookingname">Ad Soyad</label>
+                                <input type="text" class="form-control" id="bookingname" placeholder="Ad soyad girin" asp-for="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingphone">Telefon</label>
+                                <input type="tel" class="form-control" id="bookingphone" placeholder="Telefon numarasını girin" asp-for="Phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingmail">Mail</label>
+                                <input type="email" class="form-control" id="bookingmail" placeholder="Mail adresini girin" asp-for="Mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingpersoncount">Kişi Sayısı</label>
+                                <input type="number" class="form-control" id="bookingpersoncount" placeholder="Kişi sayısını girin" asp-for="PersonCount">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingdate">Tarih</label>
+                                <input type="datetime-local" class="form-control" id="bookingdate" asp-for="Date">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

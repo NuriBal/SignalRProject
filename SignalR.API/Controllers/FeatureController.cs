@@ -22,7 +22,7 @@ public class FeatureController : ControllerBase
     [HttpGet]
     public IActionResult List()
     {
-        var values = _service.TGetListAll();
+        var values = _service.TGetListAll().Where(w => w.IsActive);
         var response = _mapper.Map<List<ResultFeatureDto>>(values);
         return Ok(response);
     }

@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Güncelle";
-    Layout = "~/Views/AdminLayout/Index.cshtml";
-}
-@model SignalR.UI.Dtos.CategoryDtos.UpdateCategoryDto
+﻿@model SignalR.UI.Dtos.CategoryDtos.UpdateCategoryDto
 
 <div class="content">
     <div class="container-fluid">
@@ -15,10 +11,11 @@
                             <div class="card-title">Kategori Güncelle</div>
                         </div>
                         <div class="card-body">
-                            <input type="hidden" id="categoryid" asp-for="Id" value="@Model.Id">
+                            <input type="hidden" id="categoryid" asp-for="Id">
+                            <input type="hidden" asp-for="Status">
                             <div class="form-group">
                                 <label for="categoryname">Kategori Adı</label>
-                                <input type="text" class="form-control" id="categoryname" placeholder="Kategori adını girin" asp-for="Name" value="@Model.Name">
+                                <input type="text" class="form-control" id="categoryname" placeholder="Kategori adını girin" asp-for="Name">
                             </div>
                         </div>
                         <div class="card-action">
