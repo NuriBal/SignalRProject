@@ -1,6 +1,4 @@
-﻿using SignalR.Dto.CategoryDto;
-
-namespace SignalR.Dto.ProductDto;
+﻿namespace SignalR.Dto.ProductDto;
 
 public class ResultProductDto
 {

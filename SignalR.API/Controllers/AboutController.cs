@@ -27,7 +27,7 @@ public class AboutController : ControllerBase
         return Ok(response);
     }
 
-    [HttpGet("getById")]
+    [HttpGet("getById/{id}")]
     public IActionResult GetAbout(string id)
     {
         var value = _service.TGetById(id);
@@ -51,7 +51,7 @@ public class AboutController : ControllerBase
         return Ok("Hakkımda bilgisi başarı ile güncellendi");
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public IActionResult Delete(string id)
     {
         var entity = _service.TGetById(id);

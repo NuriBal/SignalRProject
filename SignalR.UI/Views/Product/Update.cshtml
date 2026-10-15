@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+@model SignalR.UI.Dtos.ProductDtos.UpdateProductDto
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Ürün İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Ürün Güncelle</div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" id="productid" asp-for="Id" value="@Model.Id">
+                            <div class="form-group">
+                                <label for="productname">Ürün Adı</label>
+                                <input type="text" class="form-control" id="productname" placeholder="Ürün adını girin" asp-for="Name" value="@Model.Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="productprice">Ürün Fiyatı</label>
+                                <input type="text" class="form-control" id="productprice" placeholder="Ürün fiyatını girin" asp-for="Price" value="@Model.Price">
+                            </div>
+                            <div class="form-group">
+                                <label for="imageurl">Ürün Görseli</label>
+                                <input type="text" class="form-control" id="imageurl" placeholder="Ürün görselini girin" asp-for="ImageUrl" value="@Model.ImageUrl">
+                            </div>
+                            <div class="form-group">
+                                <label for="productcategory">Ürün Kategorisi</label>
+                                @Html.DropDownListFor(m => m.FkCategoryId, (List<SelectListItem>)ViewBag.CategoryList, "Kategori Seçiniz", new { @class = "form-control", id = "productcategory" })
+                            </div>
+                            <div class="form-group">
+                                <label for="productdescription">Ürün Açıklaması</label>
+                                <input type="text" class="form-control" id="productdescription" placeholder="Ürün açıklamasını girin" asp-for="Description" value="@Model.Description">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
