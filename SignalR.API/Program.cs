@@ -1,5 +1,6 @@
 using Scalar.AspNetCore;
 using SignalR.API.Configurations;
+using SignalR.API.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,10 +19,14 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
+app.UseCors("CorsPolicy");
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHub<SignalRHub>("/signalrhub");
 
 app.Run();

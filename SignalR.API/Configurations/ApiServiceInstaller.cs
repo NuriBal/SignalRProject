@@ -6,6 +6,21 @@ public class ApiServiceInstaller : IServiceInstaller
 {
     public void Install(IServiceCollection services, IConfiguration configuration, IHostBuilder host)
     {
+        services.AddCors(opt =>
+        {
+            opt.AddPolicy("CorsPolicy", policy =>
+            {
+                policy
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .SetIsOriginAllowed((host) => true)
+                    .AllowCredentials();
+            });
+        });
+        
+        services.AddSignalR();
+
         services.AddAutoMapper(cfg =>
         {
             cfg.AddMaps(typeof(AboutMapping).Assembly);

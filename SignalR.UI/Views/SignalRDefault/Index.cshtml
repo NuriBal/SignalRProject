@@ -1,0 +1,27 @@
+@{
+    Layout = null;
+}
+<h1>SignalR Default Index</h1>
+@section Scripts 
+{
+    <script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <script type="text/javascript">
+                        $(document).ready(() => {
+                            var connection = new signalR.HubConnectionBuilder()
+                                .withUrl("/signalrhub")
+                                .build();
+
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
